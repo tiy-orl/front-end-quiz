@@ -38,3 +38,18 @@ body {
 
 
 /* issue 13 goes under here */
+section{
+  position: relative;
+}
+article {
+  position: relative;
+  width:250px;
+}
+
+.a{
+  left: 0px;
+}
+
+.b{
+left: 450px;
+}

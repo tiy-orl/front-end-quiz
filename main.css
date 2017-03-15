@@ -29,7 +29,9 @@ body {
 
 /* issue 12 goes under here */
 
-
+nav ul {
+  list-style-type: none;
+}
 
 
 

@@ -18,7 +18,9 @@ body {
 
 
 /* issue 11 goes under here */
-
+body {
+  padding: 5%;
+}
 
 
 

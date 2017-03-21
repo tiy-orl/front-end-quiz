@@ -8,7 +8,9 @@ body {
   margin: 0 auto;
 }
 /* issue 10 goes under here */
-
+nav li{
+  display: inline;
+}
 
 
 
@@ -18,7 +20,9 @@ body {
 
 
 /* issue 11 goes under here */
-
+body {
+  padding: 5%;
+}
 
 
 
@@ -29,7 +33,9 @@ body {
 
 /* issue 12 goes under here */
 
-
+nav ul {
+  list-style-type: none;
+}
 
 
 

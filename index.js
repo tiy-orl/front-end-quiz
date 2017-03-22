@@ -4,7 +4,7 @@
 let picElement= document.querySelector("p img");
   picElement.src="http://fillmurray.com/100/100";
 }*/
-function showPicSize (){
+function showPicSize (event){
   let button = event.target;
   let whereThePictureGoes = document.querySelector("p img");
   let size = button.dataset.size;

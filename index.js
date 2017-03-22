@@ -1,17 +1,34 @@
 // code below this line
-function showSmallPic (){
+/*function showPic (event){
   console.log("http://fillmurray.com/100/100");
-let picElement= document.querySelector("p img");
+let picElement= document.querySelector(".Murray Small");
   picElement.src="http://fillmurray.com/100/100";
 }
-function showBigPic (){
+function showPic (){
   console.log( "http://fillmurray.com/400/400");
-let picElement= document.querySelector("p img");
+let picElement= document.querySelector(".Murray Big");
 picElement.src="http://fillmurray.com/400/400";
 }
+*/
 
-let smallPic= document.querySelector(".smaller");
-smallPic.addEventListener("click", showSmallPic);
+function showPic (event) {
+      let button = event.target;
+      let whereTheSmallGoes = document.querySelector('p img');
+      whereTheSmallGoes.src = button.dataset.picture;
 
-let bigPic= document.querySelector(".larger");
-bigPic.addEventListener("click", showBigPic);
+
+    }
+
+
+//let smallPic= document.querySelector(".smaller");
+//smallPic.addEventListener("click", showPic);
+
+//let bigPic= document.querySelector(".larger");
+//bigPic.addEventListener("click", showBigPic);
+
+
+let buttons = document.querySelectorAll('button');
+  for (let i = 0; i < buttons.length; i++) {
+  let button = buttons[i];
+  button.addEventListener('click', showPic);
+  }

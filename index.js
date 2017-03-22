@@ -1,18 +1,18 @@
 // code below this line
 
-
-    function smallMurray () {
-      let myImage = document.querySelector('p img');
-      myImage.src = 'http://www.fillmurray.com/100/100';
-    }
-
-    let button = document.querySelector('.smaller');
-    button.addEventListener('click', smallMurray);
-
-function bigMurray () {
-  let myImage = document.querySelector('p img');
-   myImage.src = 'http://www.fillmurray.com/400/400';
-
+function showSmallPic (){
+  console.log("http://fillmurray.com/100/100");
+let picElement= document.querySelector("p img");
+  picElement.src="http://fillmurray.com/100/100";
 }
-    let button2 = document.querySelector('.larger');
-    button2.addEventListener('click', bigMurray);
+function showBigPic (){
+  console.log( "http://fillmurray.com/400/400");
+let picElement= document.querySelector("p img");
+picElement.src="http://fillmurray.com/400/400";
+}
+
+let smallPic= document.querySelector(".smaller");
+smallPic.addEventListener("click", showSmallPic);
+
+let bigPic= document.querySelector(".larger");
+bigPic.addEventListener("click", showBigPic);

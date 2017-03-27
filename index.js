@@ -1,3 +1,4 @@
+
 // code below this line
 /*function showSmallPic (){
   console.log("http://fillmurray.com/100/100");

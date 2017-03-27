@@ -13,8 +13,7 @@ const smallButton = document.querySelector('.smaller');
 const bigButton = document.querySelector('.larger');
 
 function smallClick(event){
-  let image = document.querySelector('p img');
-  image.src = smallUrl;
+  document.querySelector('p img').src = smallUrl;
 }
 
 function bigClick(event){

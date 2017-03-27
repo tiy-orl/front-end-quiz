@@ -1,25 +1,25 @@
 
-/*
-http://fillmurray.com/100/100
-
-http://fillmurray.com/400/400
-*/
-
-const bigUrl = 'http://fillmurray.com/400/400';
-const smallUrl = 'http://fillmurray.com/100/100';
-
-// Cache the button element.
-const smallButton = document.querySelector('.smaller');
-const bigButton = document.querySelector('.larger');
-
-function smallClick(event){
-  document.querySelector('p img').src = smallUrl;
+// code below this line
+/*function showSmallPic (){
+  console.log("http://fillmurray.com/100/100");
+let picElement= document.querySelector("p img");
+  picElement.src="http://fillmurray.com/100/100";
+}*/
+function showPicSize (event){
+  let button = event.target;
+  let whereThePictureGoes = document.querySelector("p img");
+  let size = button.dataset.size;
+  whereThePictureGoes.src = "http://fillmurray.com/"+size+"/"+size;
+/*  console.log( "http://fillmurray.com/400/400");
+let picElement= document.querySelector("p img");
+picElement.src="http://fillmurray.com/400/400";*/
 }
 
-function bigClick(event){
-  let image = document.querySelector('p img');
-  image.src = bigUrl;
+let sizeButtons= document.querySelectorAll("button");
+//smallPic.addEventListener("click", showSmallPic);
+for (let i=0; i < sizeButtons.length; i++){
+  let button = sizeButtons[i];
+  button.addEventListener("click", showPicSize);
 }
-
-smallButton.addEventListener('click', smallClick);
-bigButton.addEventListener('click', bigClick);
+//let bigPic= document.querySelector(".larger");
+//bigPic.addEventListener("click", showBigPic);

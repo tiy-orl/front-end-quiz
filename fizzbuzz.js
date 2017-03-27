@@ -1,19 +1,15 @@
-var myArray = [];
-for (var i = 0; i <= 100; i++) {
+
+for (var i = 1; i <= 100; i++) {
   if (i%3 === 0 && i%5 === 0) {
-    let answer = "fizzbuzz";
-    console.log(answer);
+    console.log("fizzbuzz");
   }
   else if (i%3 === 0 ) {
-    let answer = "fizz";
-    console.log(answer);
+    console.log("fizz");
   }
   else if (i%5 === 0) {
-    let answer = "buzz";
-    console.log(answer);
+    console.log("buzz");
   }
   else {
-    let answer = [i];
-    console.log(answer);
+    console.log(i);
   }
 }

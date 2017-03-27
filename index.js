@@ -8,7 +8,7 @@ function showPicSize (event){
 /*  console.log( "http://fillmurray.com/400/400");
 let picElement= document.querySelector("p img");
 picElement.src="http://fillmurray.com/400/400";*/
-
+}
 
 
 let sizeButtons= document.querySelectorAll("button");

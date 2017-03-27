@@ -1,13 +1,26 @@
 // code below this line
 
+/*function showSmallPic (){
+  console.log("http://fillmurray.com/100/100");
+let picElement= document.querySelector("p img");
+  picElement.src="http://fillmurray.com/100/100";
+}*/
+function showPicSize (event){
+  let button = event.target;
+  let whereThePictureGoes = document.querySelector("p img");
+  let size = button.dataset.size;
+  whereThePictureGoes.src = "http://fillmurray.com/"+size+"/"+size;
+/*  console.log( "http://fillmurray.com/400/400");
+let picElement= document.querySelector("p img");
+picElement.src="http://fillmurray.com/400/400";*/
+}
 
-function billMurray (event){ //
-	let button = event.target;  //
-	let whereTheImageGoes = document.querySelector('p img'); //
-	whereTheImageGoes.src = button.dataset.name
+let sizeButtons= document.querySelectorAll("button");
+//smallPic.addEventListener("click", showSmallPic);
+for (let i=0; i < sizeButtons.length; i++){
+  let button = sizeButtons[i];
+  button.addEventListener("click", showPicSize);
 }
-  let buttons = document.querySelectorAll('button');  //
-  for (let i = 0; i < buttons.length; i++ {  
-      let button = buttons[i]; //The bracket will let buttons know to pull one thing out of the collection.
-  button.addEventListener('click', billMurray); //
-}
+//let bigPic= document.querySelector(".larger");
+//bigPic.addEventListener("click", showBigPic);
+

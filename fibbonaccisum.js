@@ -1,8 +1,10 @@
 // First Generate the Array of Numbers in Fibbonacci.
 let fib = [1, 1, 2];
-for(let i=3; i <= 32; i++) {
+for(let i=3; fib[i-1] <= 4000000; i++) {
     fib.push(fib[i-2] + fib[i-1]);
 }
+fib.pop();
+console.log(fib);
 
 const getEven = (num) => {
   return num % 2 === 0;

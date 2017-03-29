@@ -15,7 +15,7 @@ let picElement= document.querySelector("p img");
 picElement.src="http://fillmurray.com/400/400";*/
 }
 
-// let sizeButtons= document.querySelectorAll("button");
+let sizeButtons= document.querySelectorAll("ul button");
 //smallPic.addEventListener("click", showSmallPic);
 for (let i=0; i < sizeButtons.length; i++){
   let button = sizeButtons[i];

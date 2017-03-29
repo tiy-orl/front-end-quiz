@@ -1,3 +1,4 @@
+
 // code below this line
 /*function showSmallPic (){
   console.log("http://fillmurray.com/100/100");
@@ -14,7 +15,7 @@ let picElement= document.querySelector("p img");
 picElement.src="http://fillmurray.com/400/400";*/
 }
 
-let sizeButtons= document.querySelectorAll("button");
+// let sizeButtons= document.querySelectorAll("button");
 //smallPic.addEventListener("click", showSmallPic);
 for (let i=0; i < sizeButtons.length; i++){
   let button = sizeButtons[i];

@@ -1,5 +1,6 @@
 
 // code below this line
+
 /*function showSmallPic (){
   console.log("http://fillmurray.com/100/100");
 let picElement= document.querySelector("p img");
@@ -23,3 +24,4 @@ for (let i=0; i < sizeButtons.length; i++){
 }
 //let bigPic= document.querySelector(".larger");
 //bigPic.addEventListener("click", showBigPic);
+

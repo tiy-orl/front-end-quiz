@@ -22,3 +22,23 @@ for (let i=0; i < sizeButtons.length; i++){
 }
 //let bigPic= document.querySelector(".larger");
 //bigPic.addEventListener("click", showBigPic);
+
+let buttonClicks = 0;
+
+function trackingClicks(){
+  buttonClicks++;
+  numberOfClicks.textContent = buttonClicks;
+  let counter = 0;
+  for (let i = 1; i <= buttonClicks; i++){
+    if (buttonClicks % i === 0){
+      counter++
+    }
+  }
+  if (counter === 2){
+    alert(buttonClicks + ' IS A PRIME NUMBER!');
+  }
+}
+
+let button = document.querySelector('.prime')
+button.addEventListener('click', trackingClicks)
+let numberOfClicks = document.querySelector('.number')

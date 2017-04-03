@@ -14,13 +14,15 @@ save your function in movementToCoordinates.js
 !function(){
 
   const parseString = (str) => {
-    let arr = str.split('');
+    var regEx = /\s*\s*/;
+    let arr = str.split(regEx);
+    console.log(arr);
     let number = '';
     let newCoords = [];
     arr.forEach( (ele, index) => {
-        if (!isNaN(ele) && ele !== ' ') {
+        if (!isNaN(ele)) {
           number += ele;
-        } else if (isNaN(ele) && ele !== ' '){
+        } else if (isNaN(ele)){
           newCoords.push(parseInt(number));
           newCoords.push(ele);
           number = '';

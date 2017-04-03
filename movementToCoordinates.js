@@ -16,26 +16,36 @@ save your function in movementToCoordinates.js
   const coor = (str) => {
     let coordinates = [0,0]; // c[0] is east and west, c[1] is north and south.
     let directions = str.split('');
+    let number = '';
+    let newCoords = [];
     directions.forEach( (ele, index) => {
         if (!isNaN(ele) && ele !== ' ') {
-          let num = parseInt(ele);
-          let char = directions[index + 1];
-          console.log(num, char);
-          switch (char) {
-            case 'N':
-              coordinates[1] += num;
-              break;
-            case 'S':
-              coordinates[1] -= num;
-              break;
-            case 'E':
-              coordinates[0] += num;
-              break;
-            case 'W':
-              coordinates[0] -= num;
-              break;
-          }
+          number += ele;
+        } else if (isNaN(ele) && ele !== ' '){
+          newCoords.push(parseInt(number));
+          newCoords.push(ele);
+          number = '';
         }
+    });
+    console.log(newCoords);
+
+    newCoords.forEach( (ele, index) => {
+      let num = parseInt(ele);
+      let char = newCoords[index + 1];
+      switch (char) {
+        case 'N':
+          coordinates[1] += num;
+          break;
+        case 'S':
+          coordinates[1] -= num;
+          break;
+        case 'E':
+          coordinates[0] += num;
+          break;
+        case 'W':
+          coordinates[0] -= num;
+          break;
+      }
     });
     return coordinates;
   }

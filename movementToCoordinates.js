@@ -13,12 +13,11 @@ save your function in movementToCoordinates.js
 
 !function(){
 
-  const coor = (str) => {
-    let coordinates = [0,0]; // c[0] is east and west, c[1] is north and south.
-    let directions = str.split('');
+  const parseString = (str) => {
+    let arr = str.split('');
     let number = '';
     let newCoords = [];
-    directions.forEach( (ele, index) => {
+    arr.forEach( (ele, index) => {
         if (!isNaN(ele) && ele !== ' ') {
           number += ele;
         } else if (isNaN(ele) && ele !== ' '){
@@ -27,11 +26,14 @@ save your function in movementToCoordinates.js
           number = '';
         }
     });
-    console.log(newCoords);
+    return newCoords;
+  }
 
-    newCoords.forEach( (ele, index) => {
+  const parseArray = (arr) => {
+    let coordinates = [0,0];
+    arr.forEach( (ele, index) => {
       let num = parseInt(ele);
-      let char = newCoords[index + 1];
+      let char = arr[index + 1];
       switch (char) {
         case 'N':
           coordinates[1] += num;
@@ -50,7 +52,14 @@ save your function in movementToCoordinates.js
     return coordinates;
   }
 
-  let test = "3N 5E 1S 2W 2S 3W";
+  const coor = (str) => {
+    directions = parseString(str);
+    console.log(directions);
+    let result = parseArray(directions);
+    console.log(result);
+  }
+
+  let test = "333N 75E 01S 02W 2S 3W";
 
   let testCoor = coor(test);
 

@@ -53,14 +53,14 @@ save your function in movementToCoordinates.js
     return coordinates;
   }
 
-  const coor = (str) => {
+  const findCoordinates = (str) => {
     let array = parseString(str);
     return parseArray(array);
   }
 
   let test = "3N 5E 01S 02W 2S 3W";
 
-  let testCoor = coor(test);
+  let testCoor = findCoordinates(test);
 
   console.log(testCoor);
 

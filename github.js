@@ -37,6 +37,8 @@ for everyone and display them on the page in a list.
             let li = document.createElement('li');
             let image = document.createElement('img');
             image.src = url;
+            image.style.width = '250px';
+            image.style.height = '250px';
             li.appendChild(image);
             ul.appendChild(li);
           });

@@ -1,6 +1,7 @@
 !function(){
 
-  const parseArray = (arr) => {
+  const findCoordinates = (str) => {
+    let arr = str.split(' ');
     let coordinates = [0,0];
     arr.forEach( (ele, index) => {
       if(ele.includes('N')) {
@@ -14,10 +15,6 @@
       }
     })
     return coordinates;
-  }
-
-  const findCoordinates = (str) => {
-    return parseArray(str.split(' '));
   }
 
   let test = "3N 5E 01S 02W 2S 3W";

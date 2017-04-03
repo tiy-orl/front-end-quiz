@@ -17,8 +17,7 @@
   }
 
   const findCoordinates = (str) => {
-    let array = str.split(' ');
-    return parseArray(array);
+    return parseArray(str.split(' '));
   }
 
   let test = "3N 5E 01S 02W 2S 3W";

@@ -54,9 +54,9 @@ save your function in movementToCoordinates.js
   }
 
   const coor = (str) => {
-    directions = parseString(str);
-    let result = parseArray(directions);
-    return result;
+    let array = parseString(str);
+    let coordinates = parseArray(array);
+    return coordinates;
   }
 
   let test = "3N 5E 01S 02W 2S 3W";

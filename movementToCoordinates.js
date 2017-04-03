@@ -14,9 +14,8 @@ save your function in movementToCoordinates.js
 !function(){
 
   const parseString = (str) => {
-    var regEx = /\s*\s*/;
+    let regEx = /\s*\s*/;
     let arr = str.split(regEx);
-    console.log(arr);
     let number = '';
     let newCoords = [];
     arr.forEach( (ele, index) => {
@@ -60,7 +59,7 @@ save your function in movementToCoordinates.js
     return result;
   }
 
-  let test = "333N 75E 01S 02W 2S 3W";
+  let test = "3N 5E 01S 02W 2S 3W";
 
   let testCoor = coor(test);
 

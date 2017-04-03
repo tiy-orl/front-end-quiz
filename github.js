@@ -1,46 +1,16 @@
-/*
+let usernames = ["wjwjr", "conshus", "ddsheard", "chrislebbano", "tyjdavis", "jcr08", "filusmarvin", "ochanya"];
+let githubList = document.querySelector("#githubAvatars");
+function displayAvatars (object){
+  //console.log(object.login)
+  console.log(object.avatar_url)
+  let avatar = document.createElement("li");
+  avatar.innerHTML = "<img src='"+object.avatar_url+"' width='25vw'><br>"+object.login;
+  //avatar.src = object.avatar_url;
+  githubList.appendChild(avatar);
 
-Create a github.js with an array that contains usernames for everyone in the
-class. Use that array to make calls to the GitHub API to retrieve avatars
-for everyone and display them on the page in a list.
-
-*/
-
-!function(){
-
-  let classList = [
-    "conshus",
-    "wjwjr",
-    "ddsheard",
-    "chrislebbano",
-    "tyjdavis",
-    "jcr08",
-    "filusmarvin",
-    "ochanya"];
-
-    let url = 'https://api.github.com';
-
-    const getData = (url, path, user) => {
-      return fetch(`${url}${path}${user}`);
-    }
-
-    let ul = document.createElement('ul');
-    let picturesSection = document.querySelector('.github');
-    picturesSection.appendChild(ul);
-
-    let images = classList.map( username => {
-        getData(url,'/users/', username)
-          .then(res => res.json())
-          .then(object => object.avatar_url)
-          .then(url => {
-
-            let li = document.createElement('li');
-            let image = document.createElement('img');
-            image.src = url;
-            image.style.width = '250px';
-            image.style.height = '250px';
-            li.appendChild(image);
-            ul.appendChild(li);
-          });
-    });
-}();
+}
+for (i=0; i<usernames.length;i++){
+  fetch("https://api.github.com/users/"+usernames[i])
+  .then(object => object.json())
+  .then(displayAvatars)
+}

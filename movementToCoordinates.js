@@ -3,7 +3,7 @@
   const findCoordinates = (str) => {
     let arr = str.split(' ');
     let coordinates = [0,0];
-    arr.forEach( (ele, index) => {
+    arr.forEach( (ele) => {
       if(ele.includes('N')) {
         coordinates[1] += parseInt(ele);
       } else if (ele.includes('S')) {

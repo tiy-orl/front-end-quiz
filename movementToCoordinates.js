@@ -10,7 +10,7 @@
         coordinates[1] -= parseInt(ele);
       } else if (ele.includes('E')) {
         coordinates[0] += parseInt(ele);
-      } else if (ele.includes('W')) {
+      } else {
         coordinates[0] -= parseInt(ele);
       }
     })

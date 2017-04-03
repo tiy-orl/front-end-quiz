@@ -12,7 +12,6 @@ function movements(directions){
       heading = 1;
     }
     if (directionSplit[i].includes("N") || directionSplit[i].includes("S")){
-      //if
       northSouth = northSouth + (coordinateNumber*heading)
     } else {
       eastWest = eastWest + (coordinateNumber*heading)

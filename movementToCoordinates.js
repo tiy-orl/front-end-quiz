@@ -5,11 +5,11 @@ function movements(directions){
   let heading = 1;
   for (i=0; i<directionSplit.length; i++){
     let coordinateNumber = directionSplit[i].slice(0,directionSplit[i].length-1);
-    let coordinateDirection = directionSplit[i].slice(directionSplit[i].length-1,directionSplit[i].length);
+    let coordinateDirection = directionSplit[i].slice(directionSplit[i].length-1);
     if ((coordinateDirection == "S") || (coordinateDirection == "W")){
       heading = -1;
     }else{
-      heading =1;
+      heading = 1;
     }
     if (directionSplit[i].includes("N") || directionSplit[i].includes("S")){
       //if
@@ -18,6 +18,6 @@ function movements(directions){
       eastWest = eastWest + (coordinateNumber*heading)
     }
   }
-  console.log ("["+eastWest+","+northSouth+"]");
+  console.log("["+eastWest+","+northSouth+"]");
 }
 movements("3N 12S");

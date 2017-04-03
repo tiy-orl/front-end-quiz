@@ -14,42 +14,22 @@ save your function in movementToCoordinates.js
 !function(){
 
   const parseString = (str) => {
-    let regEx = /\s*\s*/;
-    let arr = str.split(regEx);
-    let number = '';
-    let newCoords = [];
-    arr.forEach( (ele, index) => {
-        if (!isNaN(ele)) {
-          number += ele;
-        } else if (isNaN(ele)){
-          newCoords.push(parseInt(number));
-          newCoords.push(ele);
-          number = '';
-        }
-    });
-    return newCoords;
+    return str.split(' ');
   }
 
   const parseArray = (arr) => {
     let coordinates = [0,0];
     arr.forEach( (ele, index) => {
-      let num = parseInt(ele);
-      let char = arr[index + 1];
-      switch (char) {
-        case 'N':
-          coordinates[1] += num;
-          break;
-        case 'S':
-          coordinates[1] -= num;
-          break;
-        case 'E':
-          coordinates[0] += num;
-          break;
-        case 'W':
-          coordinates[0] -= num;
-          break;
+      if(ele.includes('N')) {
+        coordinates[1] += parseInt(ele);
+      } else if (ele.includes('S')) {
+        coordinates[1] -= parseInt(ele);
+      } else if (ele.includes('E')) {
+        coordinates[0] += parseInt(ele);
+      } else if (ele.includes('W')) {
+        coordinates[0] -= parseInt(ele);
       }
-    });
+    })
     return coordinates;
   }
 
@@ -58,7 +38,7 @@ save your function in movementToCoordinates.js
     return parseArray(array);
   }
 
-  let test = "3N 5E 01S 02W 2S 3W";
+  let test = "33N 5E 01S 02W 2S 3W";
 
   let testCoor = findCoordinates(test);
 

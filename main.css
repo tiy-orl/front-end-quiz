@@ -11,9 +11,17 @@ body {
 nav li{
   display: inline;
 }
+#githubAvatars{
+  list-style-type: none;
+}
 
+#githubAvatars li img{
+  width:25vw;
+}
 
-
+#githubAvatars li {
+  font-size: 3vw;
+}
 
 
 

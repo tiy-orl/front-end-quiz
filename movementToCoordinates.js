@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 function direction (string) {
   let smallerStrings = string.split(" ");
@@ -19,3 +20,31 @@ function direction (string) {
 }
 
 console.log(direction("3S 15E"));
+=======
+!function(){
+
+  const findCoordinates = (str) => {
+    let arr = str.split(' ');
+    let coordinates = [0,0];
+    arr.forEach( (ele) => {
+      if(ele.includes('N')) {
+        coordinates[1] += parseInt(ele);
+      } else if (ele.includes('S')) {
+        coordinates[1] -= parseInt(ele);
+      } else if (ele.includes('E')) {
+        coordinates[0] += parseInt(ele);
+      } else {
+        coordinates[0] -= parseInt(ele);
+      }
+    })
+    return coordinates;
+  }
+
+  let test = "3N 5E 01S 02W 2S 3W";
+
+  let testCoor = findCoordinates(test);
+
+  console.log(testCoor);
+
+}();
+>>>>>>> 0c3abbdf8f2101f6958c8369e649ea158a418fd5

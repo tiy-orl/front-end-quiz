@@ -1,27 +1,17 @@
 
-let usernames = ["ochanya", "conshus", "bgates", "jcr08", "chrisLebbano", "wjwjr", "tyjdavis", "filusmarvin", "ddsheard"];
-
-function convertToJson (response) {
-  return response.json();
-}
-
-function logJson (json) {
-  console.log(json);
-  let avatarUrl = json.map( object => object.avatar_url)
-  let test = document.querySelectorAll('li img')
-  for (i = 0; i <test.length; i++){
-    test[i].src = avatarUrl[i];
-  }
-}
-
-function firstPromise (username) {
-  return fetch("https://api.github.com/users/" + username)
-  .then(convertToJson)
+let usernames = ["wjwjr", "conshus", "ddsheard", "chrislebbano", "tyjdavis", "jcr08", "filusmarvin", "ochanya"];
+let githubList = document.querySelector("#githubAvatars");
+function displayAvatars (object){
+  //console.log(object.login)
+  console.log(object.avatar_url)
+  let avatar = document.createElement("li");
+  avatar.innerHTML = "<img src='"+object.avatar_url+"' width='25vw'><br>"+object.login;
+  //avatar.src = object.avatar_url;
+  githubList.appendChild(avatar);
 
 }
-
-let avatarPromises = usernames.map(firstPromise)
-console.log(avatarPromises);
-
-
-Promise.all(avatarPromises).then(logJson);
+for (i=0; i<usernames.length;i++){
+  fetch("https://api.github.com/users/"+usernames[i])
+  .then(object => object.json())
+  .then(displayAvatars)
+}

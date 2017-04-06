@@ -26,7 +26,7 @@ function englishify(num) {
   if (num >= 0 && num <= 20) {
     return numbers[num];
   }
-  return 'Please enter a number between 0 and zero inclusive.';
+  return 'Please enter a number between 0 and 20 inclusive.';
 }
 
 console.log( englishify(1) );

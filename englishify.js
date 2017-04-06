@@ -29,4 +29,4 @@ function englishify(num) {
   return 'Please enter a number between 0 and zero inclusive.';
 }
 
-console.log( englishify(21) );
+console.log( englishify(1) );

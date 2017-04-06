@@ -1,10 +1,3 @@
-// Write a function that can convert a number into words -
-//
-// englishify(1) returns "one"
-// englishify(12) returns "twelve"
-// Make it work for any integer from zero to twenty. Save in a file called englishify.js.
-
-
 let numbers = {
   0: 'zero',
   1: 'one',
@@ -30,10 +23,6 @@ let numbers = {
 }
 
 function englishify(num) {
-  // .isNaN()
-  // Number.prototype.toLocaleString()
-  // return english word.
-
   if (num >= 0 && num <= 20) {
     return numbers[num];
   }

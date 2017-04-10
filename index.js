@@ -1,9 +1,9 @@
 
 // code below this line
 /*function showSmallPic (){
-console.log("http://fillmurray.com/100/100");
+  console.log("http://fillmurray.com/100/100");
 let picElement= document.querySelector("p img");
-picElement.src="http://fillmurray.com/100/100";
+  picElement.src="http://fillmurray.com/100/100";
 }*/
 function showPicSize (event){
   let button = event.target;

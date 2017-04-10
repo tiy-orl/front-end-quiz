@@ -2,7 +2,7 @@ let usernames = ["wjwjr", "conshus", "ddsheard", "chrislebbano", "tyjdavis", "jc
 let githubList = document.querySelector("#githubAvatars");
 function displayAvatars (object){
   //console.log(object.login)
-  console.log(object)
+  console.log(object.avatar_url)
   let avatar = document.createElement("li");
   avatar.innerHTML = "<img src='"+object.avatar_url+"' width='25vw'><br>"+object.login;
   //avatar.src = object.avatar_url;

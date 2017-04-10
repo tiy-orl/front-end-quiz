@@ -24,9 +24,7 @@ let numbers = {
 
 function generateStr(str, num){
   let arr = num.toString().split('');
-  let onesDigit = parseInt(arr[arr.length-1]);
-  results = str + numbers[onesDigit];
-  return results;
+  return str + numbers[parseInt(arr[arr.length-1])];  
 }
 
 function englishify(num) {

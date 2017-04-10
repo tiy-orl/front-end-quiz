@@ -12,11 +12,13 @@ function movements(directions){
       heading = 1;
     }
     if (directionSplit[i].includes("N") || directionSplit[i].includes("S")){
-      northSouth = northSouth + (coordinateNumber*heading)
+      northSouth += coordinateNumber*heading;
     } else {
-      eastWest = eastWest + (coordinateNumber*heading)
+      eastWest += coordinateNumber*heading;
     }
   }
   console.log("["+eastWest+","+northSouth+"]");
+  //return [eastWest,northSouth];
+  //return [0,1]
 }
 movements("3N 12S");

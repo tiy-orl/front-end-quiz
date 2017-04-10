@@ -10,5 +10,4 @@ for (i=1; i<=100; i++){
     printValue = i;
   }
   console.log(printValue);
-
 }

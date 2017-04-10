@@ -1,21 +1,18 @@
-var fib = [];
+var sequence = [],
+ sequence[0] = 0;
+ sequence[1] = 1;
 
-fib[0] = 0;
-fib[1] = 1;
-for(i=2; i<=33; i++)
+for (let i = 2; i <= 33; i++)
 {
 
-    fib[i] = fib[i-2] + fib[i-1];
-    //console.log(fib[i]);
+    sequence[i] = sequence[i - 2] + sequence[i - 1];
+    //console.log(sequence[i]);
 }
 
-var evens = fib.filter( number => number % 2 === 0);
-// console.log(evens);
 
-var sum = 0;
-for (var i = 0; i < evens.length; i++){
-  sum += evens[i]
+let evens = sequence.filter( number => number % 2 === 0);
 
+let sum = 0;
+for (let i = 0; i <evens.length; ii++) {
+  sum += evens[i];
 }
-
-console.log(sum);

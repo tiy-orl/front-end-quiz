@@ -1,4 +1,3 @@
-
 let usernames = ["wjwjr", "conshus", "ddsheard", "chrislebbano", "tyjdavis", "jcr08", "filusmarvin", "ochanya"];
 let githubList = document.querySelector("#githubAvatars");
 function displayAvatars (object){

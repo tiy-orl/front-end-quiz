@@ -1,4 +1,3 @@
-
 function changeMaker (amountPaid, purchasePrice) {
   let changeInPennies = (amountPaid - purchasePrice) * 100;
   const coinValues = {

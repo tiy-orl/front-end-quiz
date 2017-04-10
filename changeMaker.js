@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function changeMaker(amountPaid, purchasePrice){
   let coins = {quarters: 0, dimes: 0, nickels: 0, pennies:0}
   let change = Math.abs(purchasePrice - amountPaid);
@@ -19,3 +20,20 @@ function changeMaker(amountPaid, purchasePrice){
   console.log(coins);
 }
 changeMaker(1.74,2);
+=======
+function changeMaker (amountPaid, purchasePrice) {
+  let changeInPennies = (amountPaid - purchasePrice) * 100;
+  const coinValues = {
+    quarter: 25,
+    dime: 10,
+    nickel: 5,
+    penny: 1
+  };
+  let change = {};
+  Object.keys(coinValues).forEach(coinName => {
+    numberOfCoins = parseInt(changeInPennies / coinValues[coinName]);
+    change[coinName] = numberOfCoins;
+    changeInPennies -= numberOfCoins * coinValues[coinName];
+  });
+  return change;
+>>>>>>> bc36b6de7c1482a3e8e255c97dd179697e2a9b54

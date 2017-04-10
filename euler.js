@@ -25,5 +25,4 @@ function multiply(){
 }
 
 let results = multiply();
-
 console.log(results[0] + ' is the answer.');

@@ -22,11 +22,31 @@ let numbers = {
   20: 'twenty'
 }
 
+function generateStr(str, num){
+  let arr = num.toString().split('');
+  let onesDigit = parseInt(arr[arr.length-1]);
+  results = str + numbers[onesDigit];
+  return results;
+}
+
 function englishify(num) {
   if (num >= 0 && num <= 20) {
     return numbers[num];
   }
-  return 'Please enter a number between 0 and 20 inclusive.';
+  if (num >= 21 && num <= 29) {
+    let str = generateStr('twenty ', num);
+    return str;
+  }
+  if(num === 30){
+    return 'thirty';
+  }
+  if (num >= 31 && num <= 39){
+    let str = generateStr('thirty ', num);
+    return str;
+  }
+  return 'Please enter a number between 0 and 39 inclusive.';
 }
 
-console.log( englishify(1) );
+for(let i = 0; i < 40; i++){
+  console.log(englishify(i));
+}

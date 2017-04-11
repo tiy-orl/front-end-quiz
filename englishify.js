@@ -33,10 +33,6 @@ let tensPlace = {
   9: 'ninety',
 }
 
-22
-'22'
-['2','2']
-
 function generateOnes(num){
   let arr = num.toString().split('');
   let ones = parseInt(arr[arr.length-1]);

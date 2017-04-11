@@ -1,4 +1,4 @@
-let numbers = {
+let numbers =   {
   0: 'zero',
   1: 'one',
   2: 'two',
@@ -24,7 +24,7 @@ let numbers = {
 
 function generateStr(str, num){
   let arr = num.toString().split('');
-  return str + numbers[parseInt(arr[arr.length-1])];  
+  return str + numbers[parseInt(arr[arr.length-1])];
 }
 
 function englishify(num) {

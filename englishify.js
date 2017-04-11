@@ -1,5 +1,4 @@
-
-let numbers = {
+let numbers =   {
   0: 'zero',
   1: 'one',
   2: 'two',
@@ -20,29 +19,50 @@ let numbers = {
   17: 'seventeen',
   18: 'eighteen',
   19: 'nineteen',
-  20: 'twenty',
-  30: 'thirty'
+  20: 'twenty'
 }
 
-function generateStr(str, num){
+let tensPlace = {
+  2: 'twenty',
+  3: 'thirty',
+  4: 'fourty',
+  5: 'fifty',
+  6: 'sixty',
+  7: 'seventy',
+  8: 'eighty',
+  9: 'ninety',
+  10: 'hundered'
+}
+
+function generateOnes(num){
   let arr = num.toString().split('');
-  return str + numbers[parseInt(arr[arr.length-1])];
+  let ones = parseInt(arr[arr.length-1]);
+  if (ones === 0) {
+    return '';
+  }
+  return numbers[ones];
 }
 
-  if (num >= 21 && num <= 29) {
-    let str = generateStr('twenty ', num);
-    return str;
-  }
-  if(num === 30){
-    return 'thirty';
-  }
-  if (num >= 31 && num <= 39){
-    let str = generateStr('thirty ', num);
-    return str;
-  }
-  return 'Please enter a number between 0 and 39 inclusive.';
+function generateTens(num){
+  let arr = num.toString().split('');
+  let tens = tensPlace[parseInt(arr[arr.length-2])];
+  return tens;
 }
 
-for(let i = 0; i < 40; i++){
+function englishify(num) {
+  if (num >= 0 && num <= 20) {
+    return numbers[num];
+  } else if (num >= 21 && num < 100) {
+    let tens = generateTens(num);
+    let ones = generateOnes(num);
+    return `${tens} ${ones}`;
+  } else if (num === 100) {
+    return 'one hundered';
+  }
+  return 'Please enter a number between 0 and 100 inclusive.';
+}
+
+
+for(let i = 0; i <= 100; i++){
   console.log(englishify(i));
 }

@@ -1,4 +1,5 @@
-let numbers =   {
+
+let numbers = {
   0: 'zero',
   1: 'one',
   2: 'two',
@@ -19,7 +20,8 @@ let numbers =   {
   17: 'seventeen',
   18: 'eighteen',
   19: 'nineteen',
-  20: 'twenty'
+  20: 'twenty',
+  30: 'thirty'
 }
 
 function generateStr(str, num){
@@ -27,10 +29,6 @@ function generateStr(str, num){
   return str + numbers[parseInt(arr[arr.length-1])];
 }
 
-function englishify(num) {
-  if (num >= 0 && num <= 20) {
-    return numbers[num];
-  }
   if (num >= 21 && num <= 29) {
     let str = generateStr('twenty ', num);
     return str;

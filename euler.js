@@ -1,3 +1,4 @@
+
 function paldindromeTest(number) {
   let arr = (""+number).split("");
   let numArr = (""+number).split("");

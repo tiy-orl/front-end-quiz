@@ -1,3 +1,4 @@
+
 let numbers = {
   0: 'zero',
   1: 'one',
@@ -19,14 +20,20 @@ let numbers = {
   17: 'seventeen',
   18: 'eighteen',
   19: 'nineteen',
-  20: 'twenty'
+  20: 'twenty',
+  30: 'thirty'
 }
 
 function englishify(num) {
-  if (num >= 0 && num <= 20) {
-    return numbers[num];
+  if ((num.toString().length == 2) && (num.toString().split("")[1]!= 0)) {
+    if (num.toString().split("")[0] == 2){
+      return "twenty-" + numbers[num.toString().split("")[1]] ;
+    }
+    if (num.toString().split("")[0] == 3){
+      return "thirty-" + numbers[num.toString().split("")[1]] ;
+    }
   }
-  return 'Please enter a number between 0 and 20 inclusive.';
+  return numbers[num];
 }
 
-console.log( englishify(1) );
+console.log( englishify(5) );

@@ -31,8 +31,11 @@ let tensPlace = {
   7: 'seventy',
   8: 'eighty',
   9: 'ninety',
-  10: 'hundered'
 }
+
+22
+'22'
+['2','2']
 
 function generateOnes(num){
   let arr = num.toString().split('');
@@ -53,15 +56,15 @@ function englishify(num) {
   if (num >= 0 && num <= 20) {
     return numbers[num];
   } else if (num >= 21 && num < 100) {
-    let tens = generateTens(num);
-    let ones = generateOnes(num);
-    return `${tens} ${ones}`;
+    return `${generateTens(num)} ${generateOnes(num)}`;
   } else if (num === 100) {
     return 'one hundered';
   }
   return 'Please enter a number between 0 and 100 inclusive.';
 }
 
+
+englishify(100);
 
 for(let i = 0; i <= 100; i++){
   console.log(englishify(i));

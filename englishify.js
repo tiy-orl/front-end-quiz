@@ -25,12 +25,13 @@ let numbers = {
 }
 
 function englishify(num) {
-  if ((num.toString().length == 2) && (num.toString().split("")[1]!= 0)) {
-    if (num.toString().split("")[0] == 2){
-      return "twenty-" + numbers[num.toString().split("")[1]] ;
+  let ones = num % 10;
+  if ((num >= 10) && (ones !== 0)) {
+    if (num < 30){
+      return "twenty-" + numbers[ones] ;
     }
-    if (num.toString().split("")[0] == 3){
-      return "thirty-" + numbers[num.toString().split("")[1]] ;
+    if (num < 40){
+      return "thirty-" + numbers[ones] ;
     }
   }
   return numbers[num];

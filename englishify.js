@@ -21,20 +21,23 @@ let numbers = {
   18: 'eighteen',
   19: 'nineteen',
   20: 'twenty',
-  30: 'thirty'
+  30: 'thirty',
+  40: 'forty',
+  50: 'fifty',
+  60: 'sixty',
+  70: 'seventy',
+  80: 'eighty',
+  90: 'ninety',
+  100: "one hundred"
 }
 
 function englishify(num) {
   let ones = num % 10;
-  if ((num >= 10) && (ones !== 0)) {
-    if (num < 30){
-      return "twenty-" + numbers[ones] ;
-    }
-    if (num < 40){
-      return "thirty-" + numbers[ones] ;
-    }
+  let tens = Math.floor(num/10);
+  if ((num > 20) && (ones !== 0)){
+    return numbers[tens*10]+ "-" + numbers[ones];
   }
   return numbers[num];
 }
 
-console.log( englishify(5) );
+console.log( englishify(100) );

@@ -1,40 +1,15 @@
-
-let numbers = {
-  0: 'zero',
-  1: 'one',
-  2: 'two',
-  3: 'three',
-  4: 'four',
-  5: 'five',
-  6: 'six',
-  7: 'seven',
-  8: 'eight',
-  9: 'nine',
-  10: 'ten',
-  11: 'eleven',
-  12: 'twelve',
-  13: 'thirteen',
-  14: 'fourteen',
-  15: 'fifteen',
-  16: 'sixteen',
-  17: 'seventeen',
-  18: 'eighteen',
-  19: 'nineteen',
-  20: 'twenty',
-  30: 'thirty'
-}
+var ones=['','one','two','three','four','five','six','seven','eight','nine'];
+var tens=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+var teens=['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
 
 function englishify(num) {
-  let ones = num % 10;
-  if ((num >= 10) && (ones !== 0)) {
-    if (num < 30){
-      return "twenty-" + numbers[ones] ;
+    if (num == 0) return "zero";
+    if (num == 100) return "one hundred";
+    if (num < 10) return ones[num];
+    else if (num >= 10 && num < 20) return teens[num - 10];
+    else {
+        return tens[Math.floor(num / 10)] + " " + ones[num % 10];
     }
-    if (num < 40){
-      return "thirty-" + numbers[ones] ;
-    }
-  }
-  return numbers[num];
 }
 
-console.log( englishify(5) );
+console.log( englishify(30) );

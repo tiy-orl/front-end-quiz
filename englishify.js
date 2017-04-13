@@ -1,43 +1,39 @@
+var ones=['','one','two','three','four','five','six','seven','eight','nine'];
+var tens=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+var teens=['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
 
-let numbers = {
-  0: 'zero',
-  1: 'one',
-  2: 'two',
-  3: 'three',
-  4: 'four',
-  5: 'five',
-  6: 'six',
-  7: 'seven',
-  8: 'eight',
-  9: 'nine',
-  10: 'ten',
-  11: 'eleven',
-  12: 'twelve',
-  13: 'thirteen',
-  14: 'fourteen',
-  15: 'fifteen',
-  16: 'sixteen',
-  17: 'seventeen',
-  18: 'eighteen',
-  19: 'nineteen',
-  20: 'twenty',
-  30: 'thirty',
-  40: 'forty',
-  50: 'fifty',
-  60: 'sixty',
-  70: 'seventy',
-  80: 'eighty',
-  90: 'ninety',
-  100: "one hundred"
+
+function convert_thousands(num){
+    if (num>=1000){
+        return convert_hundreds(Math.floor(num/1000))+" thousand "+convert_hundreds(num%1000);
+    }
+    else{
+        return convert_hundreds(num);
+    }
 }
 
-function englishify(num) {
-  let ones = num % 10;
-  let tens = Math.floor(num/10);
-  if ((num > 20) && (ones !== 0)){
-    return numbers[tens*10]+ "-" + numbers[ones];
-  }
-  return numbers[num];
+function convert_hundreds(num){
+    if (num>99){
+        return ones[Math.floor(num/100)]+" hundred "+convert_tens(num%100);
+    }
+    else{
+        return convert_tens(num);
+    }
 }
 
-console.log( englishify(11) );
+function convert_tens(num){
+    if (num<10) return ones[num];
+    else if (num>=10 && num<20) return teens[num-10];
+    else{
+        return tens[Math.floor(num/10)]+" "+ones[num%10];
+    }
+}
+
+function englishify(num){
+    if (num==0) return "zero";
+    else return convert_thousands(num);
+}
+
+
+
+console.log( englishify(9999) );

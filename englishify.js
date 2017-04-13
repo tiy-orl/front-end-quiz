@@ -2,6 +2,11 @@ var ones=['','one','two','three','four','five','six','seven','eight','nine'];
 var tens=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
 var teens=['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
 
+function convert_quadrillion(num){
+  if (num>=1000000000000000) return convert_trillions(Math.floor(num/1000000000000000))+" quadrillion "+ convert_trillions(num%1000000000000000);
+  return convert_trillions(num);
+}
+
 function convert_trillions(num) {
   if (num>=1000000000000) return convert_billions(Math.floor(num/1000000000000))+" trillion "+ convert_billions(num%1000000000000);
   return convert_billions(num);
@@ -35,7 +40,7 @@ function convert_tens(num){
 
 function englishify(num){
     if (num==0) return "zero";
-    return convert_billions(num);
+    return convert_quadrillion(num);
 }
 
-console.log(englishify(999999999999));
+console.log(englishify(1000000000000000));

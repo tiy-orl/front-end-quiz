@@ -40,4 +40,4 @@ function englishify(num) {
   return numbers[num];
 }
 
-console.log( englishify(100) );
+console.log( englishify(11) );

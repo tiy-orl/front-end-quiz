@@ -1,48 +1,62 @@
-function englishify(num){
+var ones=['','one','two','three','four','five','six','seven','eight','nine'];
+var tens=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+var teens=['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
 
-  let a = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven',
-          'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
-
-  let b = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-
-  let g = ['', 'thousand'];
-
-
-  if (num === 0) {
-    return 'zero';
+function convert_trillions(num) {
+  if (num>=1000000000000){
+      return convert_billions(Math.floor(num/1000000000000))+" trillion "+ convert_billions(num%1000000000000);
   }
-  if (num >= 1 && num < 20){
-    return a[num];
+  else{
+      return convert_billions(num);
   }
-  if (num >= 20 && num < 100) {
-    let arr = num.toString().split('');
-    return `${b[arr[0]]} ${a[arr[1]]}`
-  }
-  if (num >= 100 && num < 1000) {
-    let arr = num.toString().split('');
-    if (arr[1] >= 1 && arr[1] < 2){
-      let str = arr[1] + arr[2];
-      let num = parseInt(str);
-      return `${a[arr[0]]} hundred ${a[num]}`;
-    }
-    return `${a[arr[0]]} hundred ${b[arr[1]]} ${a[arr[2]]}`;
-  }
-  if (num >= 1000 && num < 10000) {
-    let arr = num.toString().split('');
-    if (arr[2] >= 1 && arr[2] < 2){
-      let str = arr[2] + arr[3];
-      let num = parseInt(str);
-      let hundred = arr[1];
-      if (hundred == 0) {
-        hundred = '';
-      } else {
-        hundred = ' hundred';
-      }
-      return `${a[arr[0]]} thousand ${a[arr[1]]} ${hundred}${a[num]}`;
-    }
-  }
-};
-
-for (let i = 1010; i < 1020; i++){
-  console.log(englishify(i));
 }
+
+function convert_billions(num) {
+  if (num>=1000000000){
+      return convert_millions(Math.floor(num/1000000000))+" billion "+ convert_millions(num%1000000000);
+  }
+  else{
+      return convert_millions(num);
+  }
+}
+
+function convert_millions(num) {
+  if (num>=1000000){
+      return convert_thousands(Math.floor(num/1000000))+" million "+ convert_thousands(num%1000000);
+  }
+  else{
+      return convert_thousands(num);
+  }
+}
+
+function convert_thousands(num){
+    if (num>=1000){
+        return convert_hundreds(Math.floor(num/1000))+" thousand "+convert_hundreds(num%1000);
+    }
+    else{
+        return convert_hundreds(num);
+    }
+}
+
+function convert_hundreds(num){
+    if (num>99){
+        return ones[Math.floor(num/100)]+" hundred "+convert_tens(num%100);
+    }
+    else{
+        return convert_tens(num);
+    }
+}
+
+function convert_tens(num){
+    if (num<10) return ones[num];
+    else if (num>=10 && num<20) return teens[num-10];
+    else{
+        return tens[Math.floor(num/10)]+" "+ones[num%10];
+      }
+    }
+function englishify(num){
+    if (num==0) return "zero";
+    return convert_billions(num);
+}
+
+console.log(englishify(999999999999));

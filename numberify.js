@@ -16,23 +16,19 @@ function numberify(str) {
   if (str === 'zero') return '0';
   if (teensStr.includes(str)){
     let num = teensStr.indexOf(str);
-    num = '1' + num.toString();
-    return num;
+    return '1' + num.toString();
   }
   let arr = str.split(' ');
-  console.log(arr);
   if (arr.length > 1) {
     let tens = tensStr.indexOf(arr[0]);
     let ones = onesStr.indexOf(arr[1]);
-    let result = [tens, ones];
-    return result.join('');
+    return [tens, ones].join('');
   } else if (arr.length === 1) {
     if(tensStr.includes(arr[0])){
       return tensStr.indexOf(arr[0]) + '0';
-    } else {
-      return onesStr.indexOf(arr[0]);
     }
+    return onesStr.indexOf(arr[0]);
   }
 }
 
-console.log(numberify('sixty'));
+console.log(numberify('forty five'));

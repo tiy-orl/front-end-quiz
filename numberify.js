@@ -14,6 +14,7 @@ var teensStr = ['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen
 function numberify(str) {
   str = str.toLowerCase();
   if (str === 'one hundred') return 100;
+  if (str === 'zero') return '0';
   if (teensStr.includes(str)){
     let num = teensStr.indexOf(str);
     num = '1' + num.toString();
@@ -31,7 +32,4 @@ function numberify(str) {
   }
 }
 
-// for (let i = 0; i < teensStr.length; i++){
-//   console.log(numberify(teensStr[i]));
-// }
-console.log(numberify('five'));
+console.log(numberify('zero'));

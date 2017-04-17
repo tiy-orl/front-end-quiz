@@ -20,14 +20,18 @@ function numberify(str) {
     return num;
   }
   let arr = str.split(' ');
-  let tens = tensStr.indexOf(arr[0]);
-  let ones = onesStr.indexOf(arr[1]);
-  let result = [tens, ones];
-  return result.join('');
-
+  if (arr.length > 1) {
+    let tens = tensStr.indexOf(arr[0]);
+    let ones = onesStr.indexOf(arr[1]);
+    let result = [tens, ones];
+    return result.join('');
+  } else if (arr.length === 1) {
+    let ones = onesStr.indexOf(arr[0]);
+    return ones;
+  }
 }
 
-for (let i = 0; i < teensStr.length; i++){
-  console.log(numberify(teensStr[i]));
-}
-console.log(numberify('eleven'));
+// for (let i = 0; i < teensStr.length; i++){
+//   console.log(numberify(teensStr[i]));
+// }
+console.log(numberify('five'));

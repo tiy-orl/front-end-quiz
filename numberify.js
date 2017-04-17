@@ -25,10 +25,10 @@ function numberify(str) {
     return [tens, ones].join('');
   } else if (arr.length === 1) {
     if(tensStr.includes(arr[0])){
-      return tensStr.indexOf(arr[0]) + '0';
+      return parseInt(tensStr.indexOf(arr[0]) + '0');
     }
     return onesStr.indexOf(arr[0]);
   }
 }
 
-console.log(numberify('forty five'));
+console.log(numberify('seventy'));

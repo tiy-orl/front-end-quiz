@@ -19,7 +19,7 @@ function numberify(str) {
     return '1' + num.toString();
   }
   let arr = str.split(' ');
-  if (arr.length > 1) {
+  if (arr.length === 2) {
     let tens = tensStr.indexOf(arr[0]);
     let ones = onesStr.indexOf(arr[1]);
     return [tens, ones].join('');

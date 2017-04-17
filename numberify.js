@@ -21,15 +21,22 @@ function numberify(str) {
     return num;
   }
   let arr = str.split(' ');
+  console.log(arr);
   if (arr.length > 1) {
     let tens = tensStr.indexOf(arr[0]);
     let ones = onesStr.indexOf(arr[1]);
     let result = [tens, ones];
     return result.join('');
   } else if (arr.length === 1) {
-    let ones = onesStr.indexOf(arr[0]);
-    return ones;
+    if(tensStr.includes(arr[0])){
+      // return onesStr.indexOf(arr[0]);
+      return tensStr.indexOf(arr[0]) + '0';
+    } else {
+      // return tensStr.indexOf(arr[0]);
+      return onesStr.indexOf(arr[0]);
+
+    }
   }
 }
 
-console.log(numberify('zero'));
+console.log(numberify('sixty'));

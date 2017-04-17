@@ -10,7 +10,6 @@ var tensStr  = ['','','twenty','thirty','forty','fifty','sixty','seventy','eight
 var onesStr  = ['','one','two','three','four','five','six','seven','eight','nine'];
 var teensStr = ['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
 
-
 function numberify(str) {
   str = str.toLowerCase();
   if (str === 'one hundred') return 100;
@@ -29,12 +28,9 @@ function numberify(str) {
     return result.join('');
   } else if (arr.length === 1) {
     if(tensStr.includes(arr[0])){
-      // return onesStr.indexOf(arr[0]);
       return tensStr.indexOf(arr[0]) + '0';
     } else {
-      // return tensStr.indexOf(arr[0]);
       return onesStr.indexOf(arr[0]);
-
     }
   }
 }

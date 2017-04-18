@@ -23,4 +23,4 @@ function convert_tens(numLower){
   return tens.indexOf(digits[0]) * 10
 }
 
-console.log(numberify('eighteen'))
+// numberify('eighteen');

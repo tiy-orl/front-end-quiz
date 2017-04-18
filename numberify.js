@@ -12,10 +12,10 @@ function numberify(num){
     return teens.indexOf(numLower) + 10;
   }
   else{
-    return convert_tens(numLower);
+    return convert_tens1(numLower);
   }
 }
-function convert_tens(numLower){
+function convert_tens1(numLower){
   let digits = numLower.split(' ');
   if(digits.length >= 2){
   return tens.indexOf(digits[0]) * 10 + ones.indexOf(digits[1])

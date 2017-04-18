@@ -1,3 +1,4 @@
+
 // code below this line
 
 function showPicSize (event){
@@ -10,8 +11,7 @@ let picElement= document.querySelector("p img");
 picElement.src="http://fillmurray.com/400/400";*/
 }
 
-
-let sizeButtons= document.querySelectorAll(".bill");
+let sizeButtons= document.querySelectorAll("ul button");
 //smallPic.addEventListener("click", showSmallPic);
 for (let i=0; i < sizeButtons.length; i++){
   let button = sizeButtons[i];

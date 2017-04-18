@@ -1,44 +1,26 @@
-// let compass = {
-//   startingPosition: [0,0],
-//   N : [0,1],
-//   E : [1,0],
-//   S : [0,-1],
-//   W : [-1,0],
-//   movement: function() {
-//     this
-//   }
-// }
+!function(){
 
-// function splitString(stringToSplit, separator) {
-//   var arrayOfStrings = stringToSplit.split(separator);
+  const findCoordinates = (str) => {
+    let arr = str.split(' ');
+    let coordinates = [0,0];
+    arr.forEach( (ele) => {
+      if(ele.includes('N')) {
+        coordinates[1] += parseInt(ele);
+      } else if (ele.includes('S')) {
+        coordinates[1] -= parseInt(ele);
+      } else if (ele.includes('E')) {
+        coordinates[0] += parseInt(ele);
+      } else {
+        coordinates[0] -= parseInt(ele);
+      }
+    })
+    return coordinates;
+  }
 
+  let test = "3N 5E 01S 02W 2S 3W";
 
-// function compassLocation(North, East, South, West) {
-//     this.Noth = [0,1],
-// }
-//
-//
-// function movement(north) {
-//   this.compass =
-//   }
-// }
+  let testCoor = findCoordinates(test);
 
-direction();
+  console.log(testCoor);
 
-function direction(noth, south, east, west) {
-  this.north = [0,1];
-}
-
-function myFunction(string) {
-  return [0,1];
-}
-
-
-function myFunction(string) {
-    if (string === "2S") {
-      return [0,-2]
-} else if (string === "2s 3E"){
-  return [3, -2]
-}
-return [0,1]
-}
+}();

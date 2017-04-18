@@ -31,4 +31,5 @@ function numberify(str) {
   }
 }
 
-console.log(numberify('seventy'));
+
+module.exports = numberify;

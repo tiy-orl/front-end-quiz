@@ -44,4 +44,4 @@ function englishify(num){
     return convert_quadrillion(num);
 }
 
-console.log(englishify(9009000090000001));
+module.exports = englishify;

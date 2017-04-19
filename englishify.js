@@ -3,6 +3,33 @@ var ones=['','one','two','three','four','five','six','seven','eight','nine'];
 var tens=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
 var teens=['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
 
+function convert_trillions(num){
+    if (num>=1000000000000){
+        return convert_billions(Math.floor(num/1000000000000))+" trillion "+convert_billions(num%1000000000000);
+    }
+    else {
+        return convert_billions(num);
+    }
+}
+
+function convert_billions(num){
+    if (num>=1000000000){
+        return convert_millions(Math.floor(num/1000000000))+" billion "+convert_millions(num%1000000000);
+    }
+    else {
+        return convert_millions(num);
+    }
+}
+
+function convert_millions(num){
+    if (num>=1000000){
+        return convert_thousands(Math.floor(num/1000000))+" million "+convert_thousands(num%1000000);
+    }
+    else {
+        return convert_thousands(num);
+    }
+}
+
 function convert_thousands(num){
     if (num>=1000){
         return convert_hundreds(Math.floor(num/1000))+" thousand "+convert_hundreds(num%1000);
@@ -31,9 +58,9 @@ function convert_tens(num){
 
 function englishify(num){
     if (num==0) return "zero";
-    else return convert_thousands(num);
+    else return convert_trillions(num);
 }
 
 
 
-console.log( englishify(9999) );
+console.log( englishify(1000999000123) );

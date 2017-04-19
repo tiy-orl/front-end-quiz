@@ -6,6 +6,13 @@ function getDifference(total, sum) {
   return total - sum;
 }
 
+function getProduct(total, sum) {
+  return total * sum;
+}
+
+function getQuotient(total, sum) {
+  return total / sum;
+}
 
 function englishMath(string) {
   if ((string).includes(' plus ')){
@@ -16,6 +23,14 @@ function englishMath(string) {
     let minus = (string).split(' minus ').map(numberify);
     console.log(minus.reduce(getDifference));
   }
+  if ((string).includes(' times ')){
+    let mult = (string).split(' times ').map(numberify);
+    console.log(mult.reduce(getProduct));
+  }
+  if ((string).includes(' divided ')){
+    let div = (string).split(' divided ').map(numberify);
+    console.log(div.reduce(getQuotient));
+  }
 }
 
-englishMath('eight minus five');
+englishMath('fifty seven plus thirty three');

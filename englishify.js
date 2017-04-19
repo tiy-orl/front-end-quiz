@@ -1,8 +1,3 @@
-
-var ones=['','one','two','three','four','five','six','seven','eight','nine'];
-var tens=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
-var teens=['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
-
 function convert_trillions(num){
     if (num>=1000000000000){
         return convert_billions(Math.floor(num/1000000000000))+" trillion "+convert_billions(num%1000000000000);

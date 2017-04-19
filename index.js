@@ -25,7 +25,6 @@ for (let i=0; i < sizeButtons.length; i++){
 //bigPic.addEventListener("click", showBigPic);
 
 $("#giphButton").on('click', function(e){
-  let mathGiphy = $("#mathGiphy").val()
-  console.log(englishMath($("#mathGiphy").val()));
-  getGiphy(englishMath($("#mathGiphy").val()));
+  console.log(englishify(englishMath($("#mathGiphy").val())));
+  getGiphy(englishify(englishMath($("#mathGiphy").val())));
 })

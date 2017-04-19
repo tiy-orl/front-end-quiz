@@ -33,4 +33,4 @@ function englishMath(string) {
   }
 }
 
-console.log(englishify(englishMath('fifty seven times thirty four')));
+// return (englishify(englishMath('fifty seven times thirty four')));

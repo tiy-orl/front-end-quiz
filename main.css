@@ -23,7 +23,9 @@ nav li{
   font-size: 3vw;
 }
 
-
+#randomGiph{
+  max-width: 30vw;
+}
 
 
 

@@ -51,3 +51,10 @@ function countClicks(event) {
   }
 
 }
+
+$( ".wedClass" ).click(function() {
+  
+});
+
+let searchBar = $(".wedInput.value").text;
+console.log(weInput.value);

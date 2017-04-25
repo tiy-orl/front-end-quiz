@@ -15,13 +15,11 @@ function Car (options) {
 }
 
 Car.prototype.range = function(){
-  let gasTank = parseInt(this.gasTank);
-  let mileage = parseInt(this.mileage);
-  let range = gasTank * mileage;
+  let range = this.gasTank * this.mileage;
   return range;
 };
 
-let myCar = new Car({make: 'Honda', model: 'Civic', gasTank: '5', mileage: '31'});
+let myCar = new Car({make: 'Honda', model: 'Civic', gasTank: 5, mileage: 31});
 console.log(myCar.range());
 
 
@@ -35,12 +33,10 @@ class Vehicle {
   }
 
   range() {
-    let gasTank = parseInt(this.gasTank);
-    let mileage = parseInt(this.mileage);
-    let range = gasTank * mileage;
+    let range = this.gasTank * this.mileage;
     return range;
   }
 }
 
-let myVehicle = new Vehicle({make: 'Honda', model: 'Civic', gasTank: '5', mileage: '31'});
+let myVehicle = new Vehicle({make: 'Honda', model: 'Civic', gasTank: 5, mileage: 31});
 console.log(myVehicle.range());

@@ -23,3 +23,8 @@ for (let i=0; i < sizeButtons.length; i++){
 }
 //let bigPic= document.querySelector(".larger");
 //bigPic.addEventListener("click", showBigPic);
+
+$("#giphButton").on('click', function(e){
+  console.log(englishify(englishMath($("#mathGiphy").val())));
+  getGiphy(englishify(englishMath($("#mathGiphy").val())));
+})

@@ -17,20 +17,20 @@ function getQuotient(total, sum) {
 function englishMath(string) {
   if ((string).includes(' plus ')){
     let add = (string).split(' plus ').map(numberify);
-    return add.reduce(getSum);
+    console.log(add.reduce(getSum));
 
   } else if ((string).includes(' minus ')){
     let minus = (string).split(' minus ').map(numberify);
-    return minus.reduce(getDifference);
+    console.log(minus.reduce(getDifference));
   }
   if ((string).includes(' times ')){
     let mult = (string).split(' times ').map(numberify);
-    return mult.reduce(getProduct);
+    console.log(mult.reduce(getProduct));
   }
   if ((string).includes(' divided ')){
     let div = (string).split(' divided ').map(numberify);
-    return div.reduce(getQuotient);
+    console.log(div.reduce(getQuotient));
   }
 }
 
-// return (englishify(englishMath('fifty seven times thirty four')));
+englishMath('fifty seven plus thirty three');

@@ -23,3 +23,24 @@ Car.prototype.range = function(){
 
 let myCar = new Car({make: 'Honda', model: 'Civic', gasTank: '5', mileage: '31'});
 console.log(myCar.range());
+
+
+// In Class form.
+class Vehicle {
+  constructor(options) {
+    this.make    = options.make;
+    this.model   = options.model;
+    this.gasTank = options.gasTank;
+    this.mileage = options.mileage;
+  }
+
+  range() {
+    let gasTank = parseInt(this.gasTank);
+    let mileage = parseInt(this.mileage);
+    let range = gasTank * mileage;
+    return range;
+  }
+}
+
+let myVehicle = new Vehicle({make: 'Honda', model: 'Civic', gasTank: '5', mileage: '31'});
+console.log(myVehicle.range());
